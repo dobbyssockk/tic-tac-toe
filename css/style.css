@@ -1,0 +1,112 @@
+:root {
+    --main-color: #194f82;
+    --x-color: #56ace0;
+    --o-color: #ffc10d;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.game {
+    margin-top: 60px;
+}
+
+.game__title {
+    color: var(--main-color);
+    font-size: 35px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game__items {
+    display: grid;
+    grid-template: repeat(3, 200px) / repeat(3, 200px);
+    margin: 20px 0;
+    border: 1px solid #194f82;
+    border-radius: 20px;
+}
+
+.game__item {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 90px;
+    text-transform: uppercase;
+    border: 1px solid #194f82;
+    cursor: url('../icons/cursor.png'), pointer;
+}
+
+.game__item:nth-child(1) {
+    border-top-left-radius: 20px;
+}
+
+.game__item:nth-child(3) {
+    border-top-right-radius: 20px;
+}
+
+.game__item:nth-child(7) {
+    border-bottom-left-radius: 20px;
+}
+
+.game__item:nth-child(9){
+    border-bottom-right-radius: 20px;
+}
+
+.game__items .x {
+    background-color: var(--x-color);
+}
+
+.game__items .o {
+    background-color: var(--o-color);
+}
+
+.game__turns {
+    margin: 0 auto;
+    display: grid;
+    max-width: 250px;
+    gap: 10px;
+    grid-template: 1fr / repeat(2, 1fr);
+}
+
+.game__turn {
+    padding: 0.8em 1.8em;
+    border: 2px solid #194f82;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: var(--main-color);
+}
+
+.game__turn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--main-color);
+    transition: .2s ease;
+    display: block;
+    z-index: -1;
+}
+
+.active::before {
+    width: 105%;
+}
+
+.active {
+    color: #111;
+}
