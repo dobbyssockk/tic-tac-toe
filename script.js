@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTurn = 'x';
     let gameState = ['', '', '', '', '', '', '', '', ''];
 
-    const pencilSound = new Audio('../pencil.mp3');
+    const pencilSound = new Audio('pencil.mp3');
 
     const gameItemEl = document.querySelectorAll('.game__item');
     const turnDisplayElX = document.querySelector('.game__turns .x');
