@@ -111,3 +111,18 @@
 .active {
     color: #111;
 }
+
+@media (max-width: 768px) {
+    .game__items {
+        grid-template: repeat(3, 200px) / repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .game__items {
+        grid-template: repeat(3, 115px) / repeat(3, 1fr);
+    }
+    .game__item {
+        font-size: 70px;
+    }
+}
